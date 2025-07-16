@@ -3,7 +3,7 @@ import sys
 from setuptools import find_packages, setup
 from uiautomation.version import VERSION
 
-requires = ['comtypes>=1.2.1'] if sys.version_info >= (3, 7) else ['comtypes==1.2.1']
+requires = ['comtypes>=1.4.11'] if sys.version_info >= (3, 7) else ['comtypes==1.4.11']
 
 if sys.version_info < (3, 5):
     requires.append('typing')
@@ -33,6 +33,7 @@ setup(
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
     ],
     install_requires=requires
 )
