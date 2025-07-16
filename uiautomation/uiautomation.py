@@ -30,9 +30,9 @@ from typing import (Any, Callable, Dict, Generator, List, Tuple, Optional, Union
 
 
 METRO_WINDOW_CLASS_NAME = 'Windows.UI.Core.CoreWindow'  # for Windows 8 and 8.1
-SEARCH_INTERVAL = 0.5  # search control interval seconds
+SEARCH_INTERVAL = 0.05  # search control interval seconds
 MAX_MOVE_SECOND = 1  # simulate mouse move or drag max seconds
-TIME_OUT_SECOND = 10
+TIME_OUT_SECOND = 5
 OPERATION_WAIT_TIME = 0.5
 MAX_PATH = 260
 DEBUG_SEARCH_TIME = False
@@ -366,12 +366,14 @@ class PropertyId:
     GridItemRowSpanProperty = 30066
     GridRowCountProperty = 30062
     HasKeyboardFocusProperty = 30008
+    HeadingLevelProperty = 30173
     HelpTextProperty = 30013
     IsAnnotationPatternAvailableProperty = 30118
     IsContentElementProperty = 30017
     IsControlElementProperty = 30016
     IsCustomNavigationPatternAvailableProperty = 30151
     IsDataValidForFormProperty = 30103
+    IsDialogProperty = 30174
     IsDockPatternAvailableProperty = 30027
     IsDragPatternAvailableProperty = 30137
     IsDropTargetPatternAvailableProperty = 30141
@@ -542,12 +544,14 @@ PropertyIdNames = {
     PropertyId.GridItemRowSpanProperty: 'GridItemRowSpanProperty',
     PropertyId.GridRowCountProperty: 'GridRowCountProperty',
     PropertyId.HasKeyboardFocusProperty: 'HasKeyboardFocusProperty',
+    PropertyId.HeadingLevelProperty: 'HeadingLevelProperty',
     PropertyId.HelpTextProperty: 'HelpTextProperty',
     PropertyId.IsAnnotationPatternAvailableProperty: 'IsAnnotationPatternAvailableProperty',
     PropertyId.IsContentElementProperty: 'IsContentElementProperty',
     PropertyId.IsControlElementProperty: 'IsControlElementProperty',
     PropertyId.IsCustomNavigationPatternAvailableProperty: 'IsCustomNavigationPatternAvailableProperty',
     PropertyId.IsDataValidForFormProperty: 'IsDataValidForFormProperty',
+    PropertyId.IsDialogProperty: 'IsDialogProperty',
     PropertyId.IsDockPatternAvailableProperty: 'IsDockPatternAvailableProperty',
     PropertyId.IsDragPatternAvailableProperty: 'IsDragPatternAvailableProperty',
     PropertyId.IsDropTargetPatternAvailableProperty: 'IsDropTargetPatternAvailableProperty',
@@ -681,6 +685,8 @@ class AccessibleRole:
     AccessibleRole from IUIAutomation.
     Refer https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.accessiblerole?view=netframework-4.8
     """
+    Default = -1
+    None_ = 0
     TitleBar = 0x1
     MenuBar = 0x2
     ScrollBar = 0x3
